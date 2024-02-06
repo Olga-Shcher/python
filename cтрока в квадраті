@@ -1,0 +1,72 @@
+# A=input() залишаємо для коду й домашнього завдання й увесь return змінюємо на print 
+# k=int(input())
+
+def str_1(A,k):
+    """Пусть задана строка s. Назовем ее k-ой (k > 0) степенью s^k строку s^k = sss (k раз). 
+    Например, третьей степенью строки abc является строка аbсаbсаbс.
+    Корнем k степени из строки s называется такая строка t (если она существует), что t^k = s.
+    Ваша задача состоит в том, чтобы написать программу, находящую степень строки или корень из нее."""
+    N=""
+    x=len(A)
+    w=x // (-k)
+    if k >=0:
+        for i in range (k):
+            N+=A
+        return(N)
+    if k < 0:
+        if x % -k == 0 and w > 1:
+            for i in range(w): 
+                    N+=A[i]
+            return(N)
+        else:
+            return("NO SOLUTION")
+                
+
+def Test_case():
+    print("testcase #1:", end="")
+    A="abc"
+    k=3
+    a="abcabcabc"
+    str_1(A,k)
+    print("Ok" if str_1(A,k) == a else "Fail")
+ 
+    print("testcase #2:", end="")
+    A="abcdabcd"
+    k=-2
+    a="abcd"
+    str_1(A,k)
+    print("Ok" if str_1(A,k) == a else "Fail")
+
+    print("testcase #3:", end="")
+    A="abcd"
+    k=-4
+    a="NO SOLUTION"
+    str_1(A,k)
+    print("Ok" if str_1(A,k) == a else "Fail")
+    
+    print("testcase #4:", end="")
+    A="aRrKUUeEDCQLWXlHRxCUqaYhWwQHjMdDOCzoYqiKVNHHYgvidE"
+    k=-1
+    a="aRrKUUeEDCQLWXlHRxCUqaYhWwQHjMdDOCzoYqiKVNHHYgvidE"
+    str_1(A,k)
+    print("Ok" if str_1(A,k) == a else "Fail")
+
+    print("testcase #5:", end="") 
+    A="QbznfTNLMlmYZBWWYAywdwoykvgJkTlAfJLJzKayRXaZSaCGQtQbznfTNLMlmYZBWWYAywdwoykvgJkTlAfJLJzKayRXaZSaCGQtQbznfTNLMlmYZBWWYAywdwoykvgJkTlAfJLJzKayRXaZSaCGQtQbznfTNLMlmYZBWWYAywdwoykvgJkTlAfJLJzKayRXaZSaCGQtQbznfTNLMlmYZBWWYAywdwoykvgJkTlAfJLJzKayRXaZSaCGQtQbznfTNLMlmYZBWWYAywdwoykvgJkTlAfJLJzKayRXaZSaCGQtQbznfTNLMlmYZBWWYAywdwoykvgJkTlAfJLJzKayRXaZSaCGQtQbznfTNLMlmYZBWWYAywdwoykvgJkTlAfJLJzKayRXaZSaCGQtQbznfTNLMlmYZBWWYAywdwoykvgJkTlAfJLJzKayRXaZSaCGQt"
+    k=-9
+    a="QbznfTNLMlmYZBWWYAywdwoykvgJkTlAfJLJzKayRXaZSaCGQt"
+    str_1(A,k)
+    print("Ok" if str_1(A,k) == a else "Fail")
+
+    print("testcase #6:", end="")  
+    A="HqSMTSruNpkwYlnoPfCQsJHUcjdANNypsOhLRjmzPOgRMFKXrn"
+    k=-3
+    a="NO SOLUTION"
+    str_1(A,k)
+    print("Ok" if str_1(A,k) == a else "Fail")
+
+
+
+if __name__ == '__main__':
+    Test_case()
+ 

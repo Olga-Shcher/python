@@ -1,0 +1,45 @@
+def bank(A):
+    #B=input().split()
+    #B=input().split()
+    if len(A)== 3: 
+        x,p,y=int(A[0]),int(A[1]),int(A[2])
+        r=0#кількість років
+        while x < y: 
+            x+=x*p/100
+            r+=1
+        return(r)  
+    else:
+        pass
+
+def Test_case():
+    print("testcase #1:", end="")
+    A1=["1", "1", "2"] #A=input().split()
+    bank(A1)
+    print("OK" if bank(A1) == 70 else "Fail")
+
+    print("testcase #2:", end="")
+    A2=["50", "30", "20"] #A=input().split()
+    bank(A2)
+    print("OK" if bank(A2) == 0 else "Fail")
+
+    print("testcase #3:", end="")
+    A3=["10", "50", "50"] #A=input().split()
+    bank(A3)
+    print("OK" if bank(A3) == 4 else "Fail")
+
+    print("testcase #4:", end="")
+    A4=["51", "32", "224"] #A=input().split()
+    bank(A4)
+    print("OK" if bank(A4) == 6 else "Fail")
+
+    print("testcase #5:", end="")
+    A5=["0", "0", "0"] #A=input().split()
+    bank(A5)
+    print("OK" if bank(A5) == 0 else "Fail")
+
+    print("testcase #6:", end="")
+    A5=["100", "10", "200"] #A=input().split()
+    bank(A5)
+    print("OK" if bank(A5) == 8 else "Fail")
+
+Test_case()

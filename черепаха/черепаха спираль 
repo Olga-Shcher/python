@@ -1,0 +1,9 @@
+from tkinter import Y
+import turtle 
+n= int(input()) #шаг спирали
+turtle.shape("turtle") 
+x= 45 # угл спирали 
+y= x/(2*3,15)*x
+turtle.forward(y)
+input()
+
